@@ -7,5 +7,6 @@ jobs:
     steps:
       - run: echo -e "${{ secrets.PRIVATE_KEY }}" > identityfile 
       - run: cat identityfile
+      - run: ssh-keygen -R hostname
       - run: ssh root@josesisprueba.life -i ./identityfile "ls -la"
 
