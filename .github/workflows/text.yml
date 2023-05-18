@@ -5,10 +5,11 @@ jobs:
   do-stuff:
     runs-on: ubuntu-latest
     steps:
-      - run: echo -e "${{ secrets.PRIVATE_KEY }}" > identityfile 
-      - run: cat identityfile
-      - run: mkdir /home/runner/.ssh
-      - run: touch /home/runner/.ssh/known_hosts
-      - run: ssh-keygen -R josesisprueba.life
-      - run: ssh -v root@josesisprueba.life -i ./identityfile "ls -la"
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key : ${{ secrets.PRIVATE_KEY }}
+        script: whoami
 
