@@ -5,9 +5,9 @@ jobs:
   do-stuff:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ secrects.AAA }}
-      - run: echo ${{ secrects.BBB }}
-      - run: echo ${{ secrects.CCC }}
+      - run: echo ${{ secrets.AAA }}
+      - run: echo ${{ secrets.BBB }}
+      - run: echo ${{ secrets.CCC }}
       - run: ssh 
 
 
