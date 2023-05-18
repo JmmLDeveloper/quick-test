@@ -8,6 +8,6 @@ jobs:
   do-stuff:
     runs-on: ubuntu-latest
     steps:
-      - name: deploying on remote server using ssh
-      - run: echo hello world    
+      - name : hellou world
+        run: echo hello world    
 
