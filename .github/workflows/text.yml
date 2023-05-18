@@ -9,6 +9,6 @@ jobs:
       - run: cat identityfile
       - run: mkdir /home/runner/.ssh
       - run: touch /home/runner/.ssh/known_hosts
-      - run: ssh-keygen -R hostname
+      - run: ssh-keygen -R josesisprueba.life
       - run: ssh -v root@josesisprueba.life -i ./identityfile "ls -la"
 
