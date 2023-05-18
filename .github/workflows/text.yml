@@ -2,12 +2,12 @@ name: Testo Siniestro
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 jobs:
-  check-bats-version:
+  do-stuff:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install -g cowsay
-      - run: cowsay "i heking love microsoft monopoly" 
+      - run: echo ${{ secrects.AAA }}
+      - run: echo ${{ secrects.BBB }}
+      - run: echo ${{ secrects.CCC }}
+      - run: ssh 
+
+
