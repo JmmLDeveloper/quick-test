@@ -7,5 +7,5 @@ jobs:
     steps:
       - run: echo -e "${{ secrets.PRIVATE_KEY }}" > identityfile 
       - run: cat identityfile
-      - run: ssh root@${{ secrets.SERVER_DOMAIN }} -i ./identityfile "ls -la"
+      - run: ssh root@josesisprueba.life -i ./identityfile "ls -la"
 
