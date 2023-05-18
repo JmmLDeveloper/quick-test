@@ -1,20 +1,16 @@
-name: Testo Siniestro
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
+name: Deploy To Staging
+run-name: Process of Deployment
+on:
+  push:
+    branches:
+      - staging
+  merge:
+    branches:
+      - staging
 jobs:
   do-stuff:
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key : ${{ secrets.PRIVATE_KEY }}
-        script: |
-          cd ./backend
-          git pull origin staging
-          node ace build --ignore-ts-errors
-          cp .env ./build/.env
-          pm2 restart colegio-backend --update-env
+      - name: deploying on remote server using ssh
+      - run: echo hello world    
 
