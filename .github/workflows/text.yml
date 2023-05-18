@@ -14,7 +14,7 @@ jobs:
         script: |
           cd ./backend
           git pull origin staging
-          cp .env ./build/.env
           node ace build --ignore-ts-errors
+          cp .env ./build/.env
           pm2 restart colegio-backend --update-env
 
