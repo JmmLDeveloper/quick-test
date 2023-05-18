@@ -10,4 +10,4 @@ jobs:
         with:
           node-version: '14'
       - run: npm install -g cowsay
-      - run: coway "i heking love microsoft monopoly" 
+      - run: cowsay "i heking love microsoft monopoly" 
