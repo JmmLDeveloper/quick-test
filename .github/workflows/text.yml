@@ -5,9 +5,7 @@ jobs:
   do-stuff:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ secrets.AAA }}
-      - run: echo ${{ secrets.BBB }}
-      - run: echo ${{ secrets.CCC }}
-      - run: ssh 
+      - run: cat root@${{ secrets.PRIVATE_KEY}} > identityfile 
+      - run: ssh root@${{ secrets.SERVER_DOMAIN }} -i ./identityfile "ls -la"
 
 
